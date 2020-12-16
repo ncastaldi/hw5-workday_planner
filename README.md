@@ -47,4 +47,4 @@ SOFTWARE.
 
 ## Badges
 
-TBD
+[![GitHub license](https://img.shields.io/github/license/ncastaldi/hw5-workday_planner?style=for-the-badge)](https://github.com/ncastaldi/hw5-workday_planner/blob/main/license.txt)
