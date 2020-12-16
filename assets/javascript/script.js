@@ -14,8 +14,8 @@ $(document).ready(function () {
     }
 
     function displayTimeBlocks() {
-        for(var i=0; i < workdayHours.length; i++){
-            
+        for (var i = 0; i < workdayHours.length; i++) {
+
             /* Create row element */
             var rowEl = $("<row>");
             rowEl.addClass("row time-block");
@@ -43,13 +43,23 @@ $(document).ready(function () {
             buttonColEl.addClass("col-1 saveBtn fas fa-save");
             rowEl.append(buttonColEl);
 
+            /* Add everything to the page */
             containerEl.append(rowEl);
         }
     }
+
+    function saveAppointment(event) {
+        event.preventDefault();
+
+        console.log(this.previousSibling.value);
+        
+    }
+
 
     /* Function Calls */
     displayDay();
     displayTimeBlocks();
 
     /* Define Event Listeners */
+    containerEl.on("click", "button", saveAppointment);
 })
