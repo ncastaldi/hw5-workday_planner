@@ -15,14 +15,18 @@ $(document).ready(function () {
 
     function displayTimeBlocks() {
         for(var i=0; i < workdayHours.length; i++){
+            
+            /* Create row element */
             var rowEl = $("<row>");
             rowEl.addClass("row time-block");
 
+            /* Create column element */
             var hourColEl = $("<div>");
             hourColEl.addClass("col-1 hour");
             hourColEl.text(moment().set('hour', workdayHours[i]).format("hA"));
             rowEl.append(hourColEl);
 
+            /* Create textarea element */
             var descriptionColEl = $("<textarea>");
             descriptionColEl.addClass("col-10 past");
             if (moment().hour() > workdayHours[i]) {
@@ -32,9 +36,9 @@ $(document).ready(function () {
             } else if (moment().hour() === workdayHours[i]) {
                 descriptionColEl.addClass("present");
             }
-
             rowEl.append(descriptionColEl);
 
+            /* Create save button */
             var buttonColEl = $("<button>");
             buttonColEl.addClass("col-1 saveBtn fas fa-save");
             rowEl.append(buttonColEl);
