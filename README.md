@@ -2,7 +2,7 @@
 
 ## Description 
 
-TBD
+For this assignment, we created a calendar application that allows a user to save events for each hour of the day. This app will run in the browser and feature dynamically updated HTML and CSS powered by jQuery.
 
 ## Table of Contents
 
@@ -15,11 +15,18 @@ TBD
 
 ## Installation
 
-TBD
+Installation requires uploading the application files and folders to root of web server.
+
 
 ## Usage 
 
-TBD
+GitHub Repository: [https://github.com/ncastaldi/hw5-workday_planner](https://github.com/ncastaldi/hw5-workday_planner)
+
+![Repo Screenshot](./assets/images/reposcreenshot.png)
+
+Live Site: [https://www.castaldi.dev/hw5-workday_planner/](https://www.castaldi.dev/hw5-workday_planner/)
+
+![Site Screenshot](./assets/images/sitescreenshot.png)
 
 ## License
 
