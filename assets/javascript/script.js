@@ -4,7 +4,7 @@ $(document).ready(function () {
     var dayDisplayEl = $("#currentDay");
     var containerEl = $(".container");
 
-    /* Declare JS Variables */
+    /* Declare JavaScript Variables */
     var dayDisplay = moment().format("dddd, MMMM Do");
     var workdayHours = [9, 10, 11, 12, 13, 14, 15, 16, 17];
 
@@ -38,9 +38,16 @@ $(document).ready(function () {
             }
             rowEl.append(descriptionColEl);
 
+            /* Write any stored tasks to hour block */
+            if (localStorage.getItem(workdayHours[i]) !== null) {
+                var savedAppointment = localStorage.getItem(workdayHours[i]);
+                descriptionColEl.text(savedAppointment);
+            }
+
             /* Create save button */
             var buttonColEl = $("<button>");
             buttonColEl.addClass("col-1 saveBtn fas fa-save");
+            buttonColEl.data("data-taskTime", workdayHours[i]);
             rowEl.append(buttonColEl);
 
             /* Add everything to the page */
@@ -51,10 +58,15 @@ $(document).ready(function () {
     function saveAppointment(event) {
         event.preventDefault();
 
-        console.log(this.previousSibling.value);
+        /* Save written task */
+        var what = $(this.previousElementSibling).val();
         
-    }
+        /* Save time of task */
+        var when = $(this).data("data-taskTime");
 
+        /* Save when and what to local storage */
+        localStorage.setItem(when, what);
+    }
 
     /* Function Calls */
     displayDay();
